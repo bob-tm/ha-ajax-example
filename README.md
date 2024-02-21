@@ -31,4 +31,27 @@ in configuration.yaml  I add custom variable to track ajax status:
         last_notification_time: False
 </code>
 
+
+Change phone sensor name to your one.
+<code>
+  @state_trigger( "sensor.sm_f916b_last_notification")
+
+  @state_trigger( "sensor.sm_f916b_active_notification_count")
+</code>
+
+
+Left key - zone name in ajax notification
+right Value - attribute name in var.ajaxstatus 
+
+<code>
+  def parse_ajax_notification(N):	
+  	translate_name	= {
+  		'дом'   : 'house',
+  		'баня'  : 'sauna',
+  		'гараж' : 'garage',
+  		'двор'  : 'yard',
+  		'улица' : 'yard',
+  	}
+</code>
+ 
 Hope this helps. 
